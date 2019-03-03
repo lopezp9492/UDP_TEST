@@ -14,8 +14,8 @@ public class UDPClient {
 			
 			// SEND
 			aSocket = new DatagramSocket();
-			byte [] m args[0].getBytes(); //Message
-			InetAddress aHost = InetAddress.getByName(args[1]); // Server Address
+			byte [] m =  args[0].getBytes(); //Message
+			InetAddress aHost = InetAddress.getByName("127.0.0.1"); // Server Address
 			int serverPort = 6789; // Server Port
 			
 			
