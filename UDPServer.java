@@ -20,7 +20,14 @@ public class UDPServer {
 			
 			while(true)
 			{
+				// Receive
+				DatagramPacket request = new DatagramPacket(buffer, buffer.length);
+				aSocket.receive(request);
 				
+				// Send
+				DatagramPacket reply = new DatagramPacket(request.getData(),
+						request.getLength(), request.getAddress(), request.getPort());
+				aSocket.send(reply);
 			}
 			
 		}catch (SocketException e ) {System.out.println("Socket: " + e.getMessage());
